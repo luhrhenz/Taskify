@@ -11,7 +11,7 @@ body {
 .todo-container {
   position: relative;
   background: linear-gradient(135deg, #87CEEB, #4682B4);
-  padding: 25px 30px;
+  padding:0px  25px 30px;
   border-radius: 16px;
   width: 360px;
   box-shadow: 0 8px 20px oklch(0% 0 0 / 0.1);
@@ -22,6 +22,13 @@ body {
   margin-bottom: 20px;
   color: brown;
   font-family: 'Dancing Script', cursive;
+}
+
+.logo {
+  color: orangered;
+  font-weight: bold;
+  font-size: 3rem;
+  font-family: cursive;
 }
 
 .input-section {
@@ -37,7 +44,7 @@ body {
   padding: 10px;
   border: 2px solid #ddd;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: cursive;
   outline: none;
   transition: border  0.3s ease;
@@ -71,27 +78,45 @@ body {
 
 
 #todo-list li {
-  background: #f5f5f5;
-  border-radius: 10px;
+  background: linear-gradient(150deg,white, lightblue);
   padding: 12px 14px;
-  margin-bottom: 10px;
+  border-bottom: gray solid 1px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
   position: relative;
   transition: transform 0.2s, background 0.2s ease;
 }
 
+#todo-list li:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+#todo-list li:last-child {
+  border-radius: 0 0 8px 8px;
+  border-bottom: none;
+}
+
+#todo-list li:only-child {
+  border-radius: 8px;
+  border-bottom: none;
+}
+
 #todo-list li:hover {
-  transform: translateY(-2px);
-  background: lightgoldenrodyellow;
+  
+  background: whitesmoke;
+  box-shadow:  0 2px 70px rgba(0, 0, 0, 0.8);
 }
 
 #todo-list li span {
+  font-family: cursive;
   font-size: 19px;
   cursor: pointer;
   color: green;
+  overflow: hidden;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 #todo-list li.done span {
@@ -113,6 +138,7 @@ body {
   cursor: pointer;
   font-size: 1.1rem;
   transition: color 0.3s ease;
+  color: red;
 }
 
 #todo-list li button:hover {

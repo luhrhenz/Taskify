@@ -5,6 +5,13 @@ const todoList = document.getElementById("todo-list");
 window.addEventListener("DOMContentLoaded", showSavedTasks);
 addBtn.addEventListener("click", addTask);
 
+input.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    addTask()
+  }
+})
+
 function addTask() {
   const text = input.value.trim();
   if (text === "") {
@@ -26,9 +33,8 @@ function makeTaskItem(text, createdAt = new Date(), done = false) {
 
   const date = document.createElement("small");
   date.textContent = "Created: " + formatDate(createdAt);
-
   const delBtn = document.createElement("button");
-  delBtn.textContent = "❌";
+  delBtn.innerHTML = `<i class="fas fa-trash"></i>`;
 
   li.appendChild(span);
   li.appendChild(date);
@@ -83,4 +89,70 @@ function showSavedTasks() {
   });
 }
 
+// const form = document.querySelector(".todo-container");
+// const input = document.getElementById("todo-input");
+// const addBtn = document.getElementById("add-btn");
+// const todoList = document.getElementById("todo-list");
 
+// addBtn.addEventListener('click', todoList);
+
+// function toDoList() {
+//   let newTask = input.value;
+//   if (newTask === "") {
+//     alert("Please enter a task.");
+//     return;
+//   }
+
+//   const list = makeTaskItem(newTask);
+//   todoList.appendChild(list);
+//   input.value("");
+// };
+
+// function makeTaskItem() {
+//   const newTask = document.createElement("li");
+//   const span = document.createElement("span");
+//   span.textContent = newTask;
+
+//   const date = document.createElement("small");
+//   date.textContent = "Created: " + formatDate(createdAt);
+//   const delBtn = document.createElement("button");
+//   delBtn.textContent = "❌";
+
+//   li.appendChild(span);
+//   li.appendChild(date);
+//   li.appendChild(delBtn);
+
+//   if (done) li.classList.add("done");
+
+//   span.addEventListener("click", () => {
+//     li.classList.toggle("done");
+//     saveTasks();
+//   });
+
+//   delBtn.addEventListener("click", () => {
+//     li.remove();
+//     saveTasks();
+//   });
+
+//   return li;
+// // }
+
+// }
+
+
+
+// // window.addEventListener("DOMContentLoaded", showSavedTasks);
+// // addBtn.addEventListener("click", addTask);
+
+// // function addTask() {
+// //   const text = input.value.trim();
+// //   if (text === "") {
+// //     alert("Please type a task!");
+// //     return;
+// //   }
+
+// //   const li = makeTaskItem(text);
+// //   todoList.appendChild(li);
+// //   saveTasks();
+// //   input.value = "";
+// // }
