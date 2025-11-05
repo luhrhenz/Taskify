@@ -1,0 +1,120 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-image:url(pngtree-tropical-beach-house-with-palm-trees-and-crystal-clear-water-image_16189424.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.todo-container {
+  position: relative;
+  background: linear-gradient(135deg, #87CEEB, #4682B4);
+  padding: 25px 30px;
+  border-radius: 16px;
+  width: 360px;
+  box-shadow: 0 8px 20px oklch(0% 0 0 / 0.1);
+}
+
+.todo-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: brown;
+  font-family: 'Dancing Script', cursive;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-family: cursive;
+}
+
+#todo-input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: cursive;
+  outline: none;
+  transition: border  0.3s ease;
+}
+
+#todo-input:focus {
+  border-color: #5a67d8;
+}
+
+#add-btn {
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+#add-btn:hover {
+  background: #434190;
+}
+
+
+#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+#todo-list li {
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  transition: transform 0.2s, background 0.2s ease;
+}
+
+#todo-list li:hover {
+  transform: translateY(-2px);
+  background: lightgoldenrodyellow;
+}
+
+#todo-list li span {
+  font-size: 19px;
+  cursor: pointer;
+  color: green;
+}
+
+#todo-list li.done span {
+  text-decoration: line-through;
+  color: #999;
+}
+
+#todo-list li small {
+  font-size: 13px;
+  color: #777;
+}
+
+#todo-list li button {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+#todo-list li button:hover {
+  transform: scale(1.2);
+}
