@@ -2,7 +2,18 @@ const input = document.getElementById("todo-input");
 const addBtn = document.getElementById("add-btn");
 const todoList = document.getElementById("todo-list");
 
-window.addEventListener("DOMContentLoaded", showSavedTasks);
+window.addEventListener("DOMContentLoaded", () => {
+  const splashScreen = document.getElementById("splash-screen");
+
+  setTimeout(() => {
+    splashScreen.classList.add("hidden");
+    setTimeout(() => {
+      splashScreen.style.display = "none";
+    }, 1000);
+  }, 2000);
+
+  showSavedTasks();
+});
 addBtn.addEventListener("click", addTask);
 
 input.addEventListener("keydown", (event) => {
@@ -15,7 +26,7 @@ input.addEventListener("keydown", (event) => {
 function addTask() {
   const text = input.value.trim();
   if (text === "") {
-    alert("Please type a task!");
+    alert("Please input a task!");
     return;
   }
 
